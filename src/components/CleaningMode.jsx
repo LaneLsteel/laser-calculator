@@ -44,7 +44,7 @@ const CleaningMode = ({ goToHomeScreen }) => {
         collimatorOther: '',
         focusLens: '420',
         focusLensOther: '',
-        fiberDiameterCleaning: 50,
+        fiberDiameterCleaning: 400,
         laserPowerCleaning: 1000,
         baseProducts: '',
         scanControlInterfaces: '',
