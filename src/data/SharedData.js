@@ -41,6 +41,12 @@ export const headData = {
     focusLenses: ["100mm", "125mm", "150mm", "200mm", "250mm", "300mm", "400mm", "500mm", "Other"],
     fiberReceivers: ["HLC-8", "LCA"],
     electricalOptions: ["Wobble Tracker", "Scan Controller"],
+    performanceMetrics: {
+        motor: "33mm",
+        mirror: true,
+        acceleration: 12500,
+        trackingDelay: 0.0005,
+    },
   },
   "D50 Wobble Head": {
     configurations: ["V (Vertical)", "L (Horizontal LHS)"],
@@ -105,6 +111,12 @@ export const headData = {
     fiberReceivers: ["HLC-8", "LCA"],
     collimatorFiberReceivers: ["50mm Collimator, HLC-8 Receiver", "No Collimator, 35mm Collimator Adaptor", "Other"],
     fiberReceiverOptions: ["35mm Collimator Input", "HLC-8"],
+    performanceMetrics: {
+        motor: "12mm",
+        mirror: true,
+        acceleration: 700000,
+        trackingDelay: 0.00008,
+    },
   },
   "MID-POWER Scanner (1030nm)": {
     baseProducts: ["CDSH0001 - Mid Power Scanner"],
@@ -133,6 +145,12 @@ export const headData = {
     focusLenses: ["260mm, SM", "500mm, SM", "No Lens", "Other"],
     collimators: ["50mm", "60mm", "85mm", "100mm", "120mm", "160mm", "Other"],
     fiberReceivers: ["HLC-8", "LCA", "HLC-8 Rotary"],
+    performanceMetrics: {
+        motor: "20mm",
+        mirror: true,
+        acceleration: 70000,
+        trackingDelay: 0.00025,
+    },
   },
   "D33 2D HIGH-POWER Scanner": {
     scanControlInterfaces: ["IPG Controller, (YLPN) YLP-HP-B Laser Interface", "IPG Controller, (YLS/YLR) 24V Laser Interface", "No Scan Controller"],
@@ -141,6 +159,12 @@ export const headData = {
     focusLenses: ["254mm, MM", "413mm, MM", "510mm, MM", "405mm, SM", "500mm, SM", "505mm, SM", "Other"],
     collimators: ["100mm", "120mm", "140mm", "Other"],
     fiberReceivers: ["HLC-8", "LCA", "HLC-16", "HLC-8 w/ rotary"],
+    performanceMetrics: {
+        motor: "33mm",
+        mirror: true,
+        acceleration: 12500,
+        trackingDelay: 0.0005,
+    },
   },
   "D33-F 2D HIGH-POWER Scanner": {
     scanControlInterfaces: ["IPG Controller, (YLPN) YLP-HP-B Laser Interface", "IPG Controller, (YLS/YLR) 24V Laser Interface", "No Scan Controller"],
@@ -218,7 +242,7 @@ export const gasProperties = {
     'aluminum': { advantages: "Generally NOT recommended due to severe nitriding and porosity.", disadvantages: "Causes severe nitriding, porosity, and embrittlement. Avoid." },
     'mild_carbon_steel': { advantages: "Can increase penetration and improve bead profile in some applications. Cost-effective.", disadvantages: "Risk of nitriding and porosity, which can degrade mechanical properties. Not ideal for all carbon steels." },
     'high_carbon_steel': { advantages: "May offer increased penetration.", disadvantages: "High risk of nitriding and embrittlement. Generally not recommended." },
-    'stainless_steel': { advantages: "Can stabilize austenite, improve mechanical properties, and increase penetration in certain grades (e.g., duplex, lean duplex).", disadvantages: "Careful control of nitrogen percentage is crucial to avoid porosity or hot cracking. Not suitable for all stainless steels." },
+    'stainless_steel': { advantages: "Can stabilize austenite, improve mechanical properties, and increase penetration in certain grades (e.g., duplex, lean duplex).", disadvantages: "Careful control of nitrogen percentage is crucial to avoid porosity or hot cracking. Not suitable for all stainless steel grades." },
     'copper': { advantages: "Can provide some shielding.", disadvantages: "Risk of porosity and nitriding. Generally not preferred over inert gases." },
     'titanium': { advantages: "NOT recommended.", disadvantages: "Causes severe nitriding and embrittlement. Avoid." }
   },
@@ -245,7 +269,7 @@ export const gasProperties = {
     'aluminum': { advantages: "Excellent for aluminum, especially thicker sections. Helium increases heat input and reduces porosity, while argon maintains arc stability.", disadvantages: "Higher cost. Optimal mix ratio depends on thickness and application." },
     'mild_carbon_steel': { advantages: "Improved penetration and wetting compared to pure argon, with good arc stability.", disadvantages: "Higher cost than pure argon or argon-CO2 mixes. May increase spatter slightly." },
     'high_carbon_steel': { advantages: "Offers better penetration and fusion than pure argon.", disadvantages: "Higher cost. Careful control needed to avoid excessive heat input." },
-    'stainless_steel': { advantages: "Increases penetration and welding speed, good for thick stainless sections.", disadvantages: "Higher cost. Can lead to wider, flatter beads and potential for oxidation if not optimized." },
+    'stainless_steel': { advantages: "Increases penetration and welding speed, good for thick stainless sections.", disadvantages: "Higher cost. Can lead to wider, flatter beads and potential for oxidation if not mixed with argon." },
     'copper': { advantages: "Highly effective for copper, combining good heat input from helium with arc stability from argon.", disadvantages: "Higher cost and flow rates. Requires careful parameter setup." },
     'titanium': { advantages: "Can be used, but pure argon is often preferred for simplicity and cost, as titanium primarily needs inert shielding.", disadvantages: "Helium's higher thermal conductivity might be less critical than strict inertness for titanium. Higher cost." }
   },

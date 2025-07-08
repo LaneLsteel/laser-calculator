@@ -1,3 +1,72 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom styles for the vertical tabs */
+.tab-container {
+    @apply flex flex-col;
+}
+
+.tab-button {
+    @apply text-left px-4 py-3 border-l-4 border-transparent text-gray-600 hover:bg-gray-200 hover:text-gray-800 rounded-r-lg mb-1;
+    transition: all 0.2s ease-in-out;
+}
+
+.tab-button.active {
+    @apply border-blue-500 bg-white text-blue-600 font-semibold shadow-md;
+}
+
+/* Status color for a tab that is not currently active */
+.tab-button.status-complete {
+    @apply bg-green-50 border-green-300;
+}
+/* Status color for a tab that IS currently active */
+.tab-button.active.status-complete {
+    @apply bg-white border-green-500;
+}
+
+
+/* Status color for a tab that is not currently active */
+.tab-button.status-partial {
+    @apply bg-blue-50 border-blue-200;
+}
+/* Status color for a tab that IS currently active */
+.tab-button.active.status-partial {
+     @apply bg-white border-blue-500;
+}
+/* Add these new classes to the bottom of src/index.css */
+
+.slide-to-switch {
+  display: inline-flex;
+  align-items: center;
+  background-color: #2563eb; /* blue-600 */
+  color: white;
+  border-radius: 9999px;
+  padding: 0.25rem;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #1d4ed8; /* blue-800 */
+}
+
+.slide-thumb {
+  background-color: white;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.slide-to-switch:hover .slide-thumb {
+  transform: translateX(10px) scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.slide-text {
+  padding-left: 0.75rem;
+  padding-right: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+}

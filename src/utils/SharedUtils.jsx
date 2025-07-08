@@ -1,4 +1,5 @@
-// This file contains utility functions shared across different modes.
+// This file contains all the large, constant data objects for the app.
+// By centralizing them, we avoid duplicating data in different components.
 
 /**
  * Parses a string or number, extracting the numeric part.
@@ -57,7 +58,7 @@ export const getExtensionRecommendation = (material, weldingType) => {
  */
 export const parseYlpnModel = (modelString) => {
     let minPulse = NaN, maxPulse = NaN, maxPowerVal = NaN;
-    const modelRegex = /YLPN-\d+-([\dx.]+)-(\d+)/;
+    const modelRegex = /YLPN-\d+-([\dx.]+)-(\d+)-(\d+)/;
     const match = modelString.match(modelRegex);
     if (match) {
       const pulseDurationPart = match[2];
@@ -127,19 +128,19 @@ export const convertAndDisplay = (baseValue, targetUnit, valueType, fixedDecimal
         break;
       case 'areaRate_mm2_per_s':
         switch (targetUnit) {
-          case 'mm2_per_s': convertedValue = baseValue; fixedDecimalPlaces = 3; break;
-          case 'cm2_per_s': convertedValue = baseValue / 100; fixedDecimalPlaces = 3; break;
-          case 'm2_per_s': convertedValue = baseValue / 1000000; fixedDecimalPlaces = 6; break;
-          case 'in2_per_s': convertedValue = baseValue / 645.16; fixedDecimalPlaces = 4; break;
-          default: break;
+            case 'mm2_per_s': convertedValue = baseValue; break;
+            case 'cm2_per_s': convertedValue = baseValue / 100; break;
+            case 'm2_per_s': convertedValue = baseValue / 1000000; break;
+            case 'in2_per_s': convertedValue = baseValue / 645.16; break;
+            default: break;
         }
         break;
       case 'speed_mm_per_s':
         switch (targetUnit) {
-          case 'mm_per_s': convertedValue = baseValue; fixedDecimalPlaces = 2; break;
-          case 'cm_per_s': convertedValue = baseValue / 10; fixedDecimalPlaces = 3; break;
-          case 'm_per_s': convertedValue = baseValue / 1000; fixedDecimalPlaces = 4; break;
-          case 'in_per_s': convertedValue = baseValue / 25.4; fixedDecimalPlaces = 3; break;
+          case 'mm_per_s': convertedValue = baseValue; break;
+          case 'cm_per_s': convertedValue = baseValue / 10; break;
+          case 'm_per_s': convertedValue = baseValue / 1000; break;
+          case 'in_per_s': convertedValue = baseValue / 25.4; break;
           default: break;
         }
         break;
