@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 
 // Import shared data and utility functions
-import { headData, cleaningLaserModels, maxEnergyOptions_mJ, workingDistances } from '../data/SharedData';
-import { parseNumericValue, parseYlpnModel, drawScanArea, drawPartGraphic, convertAndDisplay } from '../utils/SharedUtils';
+import { headData, cleaningLaserModels, maxEnergyOptions_mJ, workingDistances } from '../../data/SharedData';
+import { parseNumericValue, parseYlpnModel, drawScanArea, drawPartGraphic, convertAndDisplay } from '../../utils/SharedUtils';
 
 // Import the new modular components for each tab
 import LaserSelection from './CleaningMode/LaserSelection';
